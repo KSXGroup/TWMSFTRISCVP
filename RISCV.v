@@ -266,7 +266,6 @@ MEMWB 	MEMWB(
 			);
 
 MCU MCU0(
-				.clk(clk),
 				.rst(rst),
 				.rdy(rdy),
 				

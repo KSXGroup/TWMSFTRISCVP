@@ -86,11 +86,13 @@ always @(posedge clk) begin
 						ma_res		<= {{24{ma_data_in[7]}}, ma_data_in};
 						ma_done		<= `bitTrue;
 						stage 		<= `MEM_STAGE0;
+						ma_addr_out	<= `zero32;
 					end
 					`EXE_LBU_OP:begin
 						ma_res		<= {{24{1'b0}}, ma_data_in};
 						ma_done		<= `bitTrue;
 						stage 		<= `MEM_STAGE0;
+						ma_addr_out	<= `zero32;
 					end
 					`EXE_LW_OP,`EXE_LH_OP,`EXE_LHU_OP:begin
 						ma_res[7:0]	<= ma_data_in;
@@ -123,11 +125,13 @@ always @(posedge clk) begin
 						ma_res[31:8] 	<= {{16{ma_data_in[7]}}, ma_data_in};
 						ma_done			<= `bitTrue;
 						stage 			<= `MEM_STAGE0;
+						ma_addr_out		<= `zero32;
 					end
 					`EXE_LHU_OP:begin
 						ma_res[31:8] 	<= {{16{1'b0}}, ma_data_in};
 						ma_done			<= `bitTrue;
 						stage 			<= `MEM_STAGE0;
+						ma_addr_out		<= `zero32;
 					end
 					`EXE_LW_OP:begin
 						ma_res[15:8]	<= ma_data_in;
@@ -151,6 +155,7 @@ always @(posedge clk) begin
 				ma_res[31:24]	<= ma_data_in;
 				stage 			<= `MEM_STAGE0;
 				ma_done			<= `bitTrue;
+				ma_addr_out		<= `zero32;
 			end
 		endcase
 	end else begin

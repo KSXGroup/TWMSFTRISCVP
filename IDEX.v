@@ -14,7 +14,6 @@ module IDEX(
 	input wire 				id_we_in,
 	input wire				id_mux_in,
 
-	output reg[`regBus]		idex_inst_out,
 	output reg[`execBus]	idex_exec_out,
 	output reg[`regAddrBus]	idex_rdest_out,
 	output reg[`regBus]		idex_rs1_out,

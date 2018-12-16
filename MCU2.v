@@ -1,7 +1,6 @@
 `include "define.v"
 module MCU(
 	input wire rst, 
-	input wire clk,
 	input wire rdy,
 
 	input wire 					inst_ce,
